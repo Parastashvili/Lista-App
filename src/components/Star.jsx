@@ -24,4 +24,10 @@ const Container = styled.div`
   @media only screen and (max-width: 600px) {
     scale: 0.8;
   }
+  img {
+    transition: ease 0.3s;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
 `;

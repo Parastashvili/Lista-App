@@ -1,0 +1,31 @@
+.splide__arrow svg {
+  fill: #df6751 !important;
+  &:hover {
+    scale: 0.95;
+  }
+}
+.splide__list {
+  gap: 2%;
+}
+.splide__slide img {
+  width: 100%;
+}
+.splide__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #fff;
+  background-color: #ffffff;
+  border-radius: 30px !important;
+}
+.splide__pagination__page {
+  background: #ff9481 !important;
+  border-radius: 50% !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+.splide__pagination__page.is-active {
+  background: #df6751 !important;
+  width: 15px !important;
+  height: 15px !important;
+}

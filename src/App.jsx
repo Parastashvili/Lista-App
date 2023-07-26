@@ -6,6 +6,7 @@ import HeroSlogan from "./styledComponents/HeroSlogan.styled";
 import HeroPar from "./styledComponents/HeroPar.styled";
 import Button from "./components/Button";
 import Star from "./components/Star";
+import Slider from "./components/Slider";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
         <Button text="Explore Menu" padding="5px 20px" textSize="16px" />
         <Star filled="4" />
       </HeroCentred>
+      <Slider />
     </>
   );
 }

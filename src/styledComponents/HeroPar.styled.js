@@ -1,5 +1,6 @@
 import styled from "styled-components";
 const Phrase = styled.div`
+  position: relative;
   color: #ededed;
   text-align: center;
   font-family: Inter;

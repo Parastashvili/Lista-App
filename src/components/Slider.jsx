@@ -50,7 +50,7 @@ export default function Slider() {
   );
 }
 const Main = styled.div`
-  margin: 300px 0;
+  margin: 0px 0;
 `;
 const SlideInner = styled.div`
   display: flex;

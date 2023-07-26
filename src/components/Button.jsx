@@ -8,6 +8,7 @@ export default function Button(props) {
   );
 }
 const ButtonCont = styled.button`
+  position: relative;
   padding: ${(props) => props.padding};
   border-radius: 43px;
   background: #df6751;

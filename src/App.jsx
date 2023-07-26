@@ -38,8 +38,16 @@ const HeroCentred = styled.div`
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+  position: relative;
+  background-color: transparent;
+  margin-bottom: 300px;
   @media only screen and (max-width: 600px) {
     gap: 5px;
     margin-top: 0px;
   }
+`;
+const SliderCont = styled.div`
+  position: relative;
+  margin-top: 300px;
+  z-index: -12;
 `;

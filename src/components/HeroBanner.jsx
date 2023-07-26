@@ -36,7 +36,6 @@ const Outer = styled.div`
   width: 100%;
   height: 610px;
   position: absolute;
-  z-index: -1;
   overflow: hidden;
   @media only screen and (max-width: 600px) {
     height: 450px;
@@ -84,6 +83,7 @@ const DishMain = styled.img`
 `;
 const DishLeft = styled.img`
   position: absolute;
+  z-index: 1;
   bottom: 15%;
   left: 15%;
   transform: translate(-50%);

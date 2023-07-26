@@ -53,7 +53,7 @@ const Navigation = styled.div`
     @media only screen and (max-width: 600px) {
       font-size: 14px;
     }
-    &:hover{    
+    &:hover {
       opacity: 0.7;
     }
   }

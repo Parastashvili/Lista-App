@@ -1,14 +1,30 @@
 import React from "react";
 import { styled } from "styled-components";
-import HeroBg from "../assets/HeroBanners/hero3.png";
+import HeroBg2 from "../assets/HeroBanners/hero2.png";
+import HeroBg3 from "../assets/HeroBanners/hero3.png";
+import HeroBg4 from "../assets/HeroBanners/hero4.png";
 import dish1 from "../assets/HeroBanners/dish1.png";
 import dish2 from "../assets/HeroBanners/dish2.png";
 import dish3 from "../assets/HeroBanners/dish3.png";
+import { useState, useEffect } from "react";
 
 export default function HeroBanner() {
+  const images = [HeroBg2, HeroBg3, HeroBg4];
+  const [heroBg, setHeroBg] = useState(HeroBg2);
+  let currentIndex = 0;
+
+  const changeBg = () => {
+    setHeroBg(images[currentIndex]);
+    currentIndex = (currentIndex + 1) % images.length;
+  };
+
+  useEffect(() => {
+    const interval = setInterval(changeBg, 10000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <Outer>
-      <Inner />
+      <Inner bgImage={heroBg} />
       <DishMain src={dish3} alt="main dish" />
       <DishLeft src={dish1} alt="left dish" />
       <DishRight src={dish2} alt="right dish" />
@@ -27,7 +43,7 @@ const Outer = styled.div`
 `;
 
 const Inner = styled.div`
-  background-image: url(${HeroBg});
+  background-image: ${({ bgImage }) => `url(${bgImage})`};
   position: absolute;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -38,6 +54,7 @@ const Inner = styled.div`
   border-radius: 70% / 0 0 100% 100%;
   filter: brightness(50%);
   box-shadow: 0 5px 10px black;
+  transition: background-image 2.5s ease;
   @media only screen and (max-width: 600px) {
     border-radius: 70% / 0 0 40% 40%;
     height: 350px;

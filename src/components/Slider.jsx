@@ -18,11 +18,9 @@ export default function Slider() {
       <Splide
         options={{
           type: "loop",
-          perPage: 5,
           focus: "center",
           autoplay: true,
-          width:"100%",
-          height:"300px",
+          fixedWidth:"250px"
         }}
         aria-label="My Favorite Images"
       >
@@ -50,9 +48,10 @@ export default function Slider() {
   );
 }
 const Main = styled.div`
-  margin: 0px 0;
+  margin: 0;
 `;
 const SlideInner = styled.div`
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,13 +59,12 @@ const SlideInner = styled.div`
   gap: 10px;
   padding-bottom: 20px;
   .img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     transition: ease 0.5s;
-    filter: drop-shadow(0px 40px 60px rgba(0, 0, 0, 0.1));
     &:hover {
       scale: 1.1;
     }

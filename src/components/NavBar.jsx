@@ -20,6 +20,7 @@ export default function NavBar() {
 }
 const Main = styled.div`
   position: fixed;
+  z-index: 1;
   width: calc(100% - 90px);
   display: flex;
   align-items: center;
@@ -44,7 +45,7 @@ const Navigation = styled.div`
   }
   p {
     cursor: pointer;
-    color: #fff;
+    color: #ffffff;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;

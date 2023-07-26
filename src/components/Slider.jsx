@@ -9,6 +9,7 @@ import img4 from "../assets/MenuItems/menu4.png";
 import img5 from "../assets/MenuItems/menu5.png";
 import img6 from "../assets/MenuItems/menu6.png";
 import "@splidejs/react-splide/css/sea-green";
+import Button from "./Button";
 export default function Slider() {
   const index = 6;
   const images = [img1, img2, img3, img4, img5, img6];
@@ -19,18 +20,27 @@ export default function Slider() {
           type: "loop",
           perPage: 5,
           focus: "center",
+          autoplay: true,
+          width:"100%",
+          height:"300px",
         }}
         aria-label="My Favorite Images"
       >
         {[...Array(index)].map((_, index) => (
           <SplideSlide key={index}>
             <SlideInner>
-              <div style={{ backgroundImage: `${images[index]}` }}></div>
-              {/* <img src={images[index]} alt="Image 1" /> */}
-              <h6>Hello darknes</h6>
-              <div>
+              <div
+                className="img"
+                style={{
+                  backgroundImage: `url(${images[index]})`,
+                }}
+              />
+              <p>Khachapuri</p>
+              <div className="priceCont">
                 <p>$6.30</p>
-                <button>Order Now</button>
+                <Button text="Order Now" padding="5px 15px" textSize="16px">
+                  Order Now
+                </Button>
               </div>
             </SlideInner>
           </SplideSlide>
@@ -43,8 +53,40 @@ const Main = styled.div`
   margin: 300px 0;
 `;
 const SlideInner = styled.div`
-  img {
-    width: 100px;
-    height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 20px;
+  .img {
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: ease 0.5s;
+    filter: drop-shadow(0px 40px 60px rgba(0, 0, 0, 0.1));
+    &:hover {
+      scale: 1.1;
+    }
+  }
+  p {
+    color: #191d23;
+    text-align: center;
+    font-family: Playfair Display;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+  }
+  .priceCont {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    p {
+      font-size: 18px;
+    }
   }
 `;

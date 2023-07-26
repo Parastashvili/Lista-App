@@ -62,6 +62,7 @@ const Inner = styled.div`
 `;
 const DishMain = styled.img`
   position: absolute;
+  z-index: 1;
   bottom: 0;
   left: 50%;
   transform: translate(-50%);
@@ -105,6 +106,7 @@ const DishLeft = styled.img`
 `;
 const DishRight = styled.img`
   position: absolute;
+  z-index: 1;
   bottom: 15%;
   left: 85%;
   transform: translate(-50%);

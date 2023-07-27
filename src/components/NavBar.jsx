@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styled } from "styled-components";
 import siteLogo from "../../public/vite.svg";
 import Button from "./Button";
 
 export default function NavBar() {
+  const [navBG, setNavBG] = useState("transparent");
+  const [navColor, setNavColor] = useState("#ffffff");
+  useEffect(() => {
+    const handleScroll = () => {
+      if (document.documentElement.scrollHeight > 0) {
+        console.log("yes");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <Main>
+    <Main style={{ backgroundColor: `${navBG}` }}>
       <Logo src={siteLogo} />
       <Navigation>
-        <p>Home</p>
-        <p>Menu</p>
-        <p>Locations</p>
-        <p>Review</p>
-        <p>About Us</p>
+        <p style={{ color: `${navColor}` }}>Home</p>
+        <p style={{ color: `${navColor}` }}>Menu</p>
+        <p style={{ color: `${navColor}` }}>Locations</p>
+        <p style={{ color: `${navColor}` }}>Review</p>
+        <p style={{ color: `${navColor}` }}>About Us</p>
         <Button text="Contact Us" padding="7px 15px" textSize="20px" />
       </Navigation>
     </Main>
@@ -45,7 +58,6 @@ const Navigation = styled.div`
   }
   p {
     cursor: pointer;
-    color: #ffffff;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;

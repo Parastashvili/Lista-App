@@ -101,11 +101,13 @@ const Cont = styled.div`
     align-items: start;
     justify-content: center;
     gap: 40px;
-    width: 100%;
+    width: 80%;
     margin-right: 30px;
     @media only screen and (max-width: 800px) {
-      width: 75%;
       gap: 30px;
+    }
+    @media only screen and (min-width: 1300px) {
+      width: 200%;
     }
     h2 {
       color: #000;

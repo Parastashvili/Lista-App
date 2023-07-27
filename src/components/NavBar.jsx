@@ -7,13 +7,16 @@ import HamburgerMenu from "./HamburgerMenu";
 export default function NavBar() {
   const [navBG, setNavBG] = useState("transparent");
   const [navColor, setNavColor] = useState("#ffffff");
+  const [burgerColor, setbBrgerColor] = useState("#ffffff");
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setNavBG("#ffffff");
       setNavColor("#000000");
+      setbBrgerColor("#000000");
     } else {
       setNavBG("transparent");
       setNavColor("#ffffff");
+      setbBrgerColor("#ffffff");
     }
   };
   useEffect(() => {
@@ -30,12 +33,21 @@ export default function NavBar() {
   const hamburger = () => {
     setOpen(!isOpen);
     if (!isOpen) {
-      setNavColor("#000000");
+      setbBrgerColor("#000000");
     } else {
-      setNavColor("#ffffff");
+      setbBrgerColor("#ffffff");
     }
-    console.log(isOpen);
   };
+  useEffect(() => {
+    const handleScrolling = () => {
+      if (isOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    };
+    handleScrolling();
+  }, [isOpen]);
   return (
     <Main style={{ backgroundColor: `${navBG}` }}>
       <Logo src={siteLogo} />
@@ -52,11 +64,11 @@ export default function NavBar() {
           <Hamburger
             toggled={isOpen}
             toggle={hamburger}
-            color={`${navColor}`}
+            color={`${burgerColor}`}
           />
         </div>
         <div style={{ position: "absolute", zIndex: -1 }}>
-          {isOpen ? <HamburgerMenu /> : null}
+          <HamburgerMenu isOpen={isOpen} />
         </div>
       </Navigation>
     </Main>

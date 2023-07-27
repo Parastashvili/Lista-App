@@ -61,13 +61,19 @@ const HeroCentred = styled.div`
   }
   .tomato {
     position: absolute;
-    bottom: -80px;
+    bottom: -30px;
     left: 0;
+    @media only screen and (max-width: 800px) {
+      display: none;
+    }
   }
   .egg {
     position: absolute;
-    bottom: -50px;
+    bottom: -10px;
     right: 6%;
+    @media only screen and (max-width: 700px) {
+      display: none;
+    }
   }
   .text {
     display: flex;
@@ -77,6 +83,10 @@ const HeroCentred = styled.div`
     max-width: 60%;
     display: flex;
     gap: 20px;
+    @media only screen and (max-width: 972px) {
+      flex-direction: column;
+      text-align: center;
+    }
     h4 {
       width: 200px;
       color: #191d23;
@@ -88,6 +98,7 @@ const HeroCentred = styled.div`
       line-height: 44px;
     }
     p {
+      max-width: 450px;
       color: #75797f;
       font-family: Inter;
       font-size: 13px;

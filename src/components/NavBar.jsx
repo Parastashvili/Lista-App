@@ -6,15 +6,23 @@ import Button from "./Button";
 export default function NavBar() {
   const [navBG, setNavBG] = useState("transparent");
   const [navColor, setNavColor] = useState("#ffffff");
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setNavBG("#ffffff");
+      setNavColor("#000000");
+    } else {
+      setNavBG("transparent");
+      setNavColor("#ffffff");
+    }
+  };
   useEffect(() => {
-    const handleScroll = () => {
-      if (document.documentElement.scrollHeight > 0) {
-        console.log("yes");
-      }
+    handleScroll();
+    const handleScrollEvent = () => {
+      handleScroll();
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScrollEvent);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScrollEvent);
     };
   }, []);
   return (
@@ -38,7 +46,7 @@ const Main = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 45px;
+  padding: 10px 45px;
   @media only screen and (max-width: 600px) {
     padding: 17px 22px;
     width: calc(100% - 44px);

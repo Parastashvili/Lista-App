@@ -1,6 +1,9 @@
 .splide__arrow svg {
   fill: #df6751 !important;
 }
+.splide__arrow {
+  z-index: 0 !important;
+}
 .splide__slide {
   display: flex;
   align-items: center;

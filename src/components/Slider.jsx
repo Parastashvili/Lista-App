@@ -20,7 +20,7 @@ export default function Slider() {
           type: "loop",
           focus: "center",
           autoplay: true,
-          fixedWidth:"250px"
+          fixedWidth: "250px",
         }}
         aria-label="My Favorite Images"
       >

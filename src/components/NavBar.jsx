@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import siteLogo from "../../public/vite.svg";
 import Button from "./Button";
 import { Divide as Hamburger } from "hamburger-react";
+import HamburgerMenu from "./HamburgerMenu";
 export default function NavBar() {
   const [navBG, setNavBG] = useState("transparent");
   const [navColor, setNavColor] = useState("#ffffff");
@@ -26,6 +27,15 @@ export default function NavBar() {
     };
   }, []);
   const [isOpen, setOpen] = useState(false);
+  const hamburger = () => {
+    setOpen(!isOpen);
+    if (!isOpen) {
+      setNavColor("#000000");
+    } else {
+      setNavColor("#ffffff");
+    }
+    console.log(isOpen);
+  };
   return (
     <Main style={{ backgroundColor: `${navBG}` }}>
       <Logo src={siteLogo} />
@@ -41,16 +51,12 @@ export default function NavBar() {
         <div className="hamburger">
           <Hamburger
             toggled={isOpen}
-            toggle={setOpen}
+            toggle={hamburger}
             color={`${navColor}`}
-            onToggle={(toggled) => {
-              if (toggled) {
-                // open a menu
-              } else {
-                // close a menu
-              }
-            }}
           />
+        </div>
+        <div style={{ position: "absolute", zIndex: -1 }}>
+          {isOpen ? <HamburgerMenu /> : null}
         </div>
       </Navigation>
     </Main>
@@ -58,12 +64,12 @@ export default function NavBar() {
 }
 const Main = styled.div`
   position: fixed;
-  z-index: 1;
+  z-index: 20;
   width: calc(100% - 90px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 45px;
+  padding: 15px 45px;
   @media only screen and (max-width: 600px) {
     padding: 15px 22px;
     width: calc(100% - 44px);

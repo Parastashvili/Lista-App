@@ -42,7 +42,7 @@ export default function NavBar() {
           <Hamburger
             toggled={isOpen}
             toggle={setOpen}
-            color="#ffffff"
+            color={`${navColor}`}
             onToggle={(toggled) => {
               if (toggled) {
                 // open a menu

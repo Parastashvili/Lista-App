@@ -15,5 +15,8 @@ const Phrase = styled.div`
     line-height: 18px;
     padding: 15px;
   }
+  @media only screen and (max-width: 280px) {
+    display: none;
+  }
 `;
 export default Phrase;

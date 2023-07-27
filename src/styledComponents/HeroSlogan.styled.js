@@ -10,6 +10,10 @@ const Phrase = styled.div`
   line-height: 60px;
   padding-top: 110px;
   cursor: default;
+  @media only screen and (max-width: 900px) {
+    font-size: 34px;
+    line-height: 44px;
+  }
   @media only screen and (max-width: 600px) {
     padding: 80px 30px 0 30px;
     font-size: 22px;

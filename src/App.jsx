@@ -9,9 +9,7 @@ import Star from "./components/Star";
 import Slider from "./components/Slider";
 import Decoration1 from "./assets/Decorations/decoration1.png";
 import Decoration2 from "./assets/Decorations/decoration2.png";
-useState;
 function App() {
-
   return (
     <>
       <HeroBanner />

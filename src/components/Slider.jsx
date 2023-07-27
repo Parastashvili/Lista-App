@@ -48,7 +48,9 @@ export default function Slider() {
   );
 }
 const Main = styled.div`
-  margin: 0;
+  height: 500px;
+  border-bottom-left-radius: 200px;
+  background-color: #f8f9fb;
 `;
 const SlideInner = styled.div`
   overflow: hidden;

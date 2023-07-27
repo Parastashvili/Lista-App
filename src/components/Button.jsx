@@ -22,6 +22,7 @@ const ButtonCont = styled.button`
   border-width: 0px;
   cursor: pointer;
   transition: ease 0.5s;
+  z-index: 2;
   @media only screen and (max-width: 600px) {
     padding: 5px 10px;
     font-size: 14px;

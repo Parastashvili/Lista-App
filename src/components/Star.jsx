@@ -21,6 +21,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5px;
+  z-index: 2;
   @media only screen and (max-width: 600px) {
     scale: 0.8;
   }

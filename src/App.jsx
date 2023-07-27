@@ -9,6 +9,7 @@ import Star from "./components/Star";
 import Slider from "./components/Slider";
 import Decoration1 from "./assets/Decorations/decoration1.png";
 import Decoration2 from "./assets/Decorations/decoration2.png";
+import Banner from "./components/Banner";
 function App() {
   return (
     <>
@@ -40,6 +41,7 @@ function App() {
         </div>
       </HeroCentred>
       <Slider />
+      <Banner />
     </>
   );
 }
@@ -53,7 +55,7 @@ const HeroCentred = styled.div`
   gap: 20px;
   margin-top: 20px;
   position: relative;
-  background-color: transparent;
+  background-color: #f8f9fb;
   height: 420px;
   @media only screen and (max-width: 600px) {
     gap: 5px;

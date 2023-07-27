@@ -10,6 +10,7 @@ import Slider from "./components/Slider";
 import Decoration1 from "./assets/Decorations/decoration1.png";
 import Decoration2 from "./assets/Decorations/decoration2.png";
 import Banner from "./components/Banner";
+import Section from "./components/Section";
 function App() {
   return (
     <>
@@ -42,6 +43,7 @@ function App() {
       </HeroCentred>
       <Slider />
       <Banner />
+      <Section />
     </>
   );
 }

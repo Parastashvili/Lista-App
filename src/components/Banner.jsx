@@ -2,6 +2,8 @@ import React from "react";
 import { styled } from "styled-components";
 import mask from "../assets/Banners/mask.png";
 import over from "../assets/Banners/over.png";
+import over1 from "../assets/Banners/over1.png";
+import over2 from "../assets/Banners/over2.png";
 import Button from "./Button";
 import arrowright from "../assets/Icons/left.png";
 import arrowleft from "../assets/Icons/right.png";
@@ -11,7 +13,7 @@ export default function Banner() {
     <Cont>
       <div className="banners">
         <img className="mask" src={mask} alt="" />
-        <img className="over" src={over} alt="" />
+        <img className="over" src={over2} alt="" />
       </div>
       <div className="textContent">
         <h2>
@@ -27,10 +29,10 @@ export default function Banner() {
         <Button text="Learn More" padding="5px 10px" textSize="14px"></Button>
         <div className="arrows">
           <button>
-            <img src={arrowleft} alt="" />
+            <img src={arrowleft} alt="arrow left" />
           </button>
           <button>
-            <img src={arrowright} alt="" />
+            <img src={arrowright} alt="arrow rigth" />
           </button>
         </div>
         <img className="decoration" src={deco} alt="" />

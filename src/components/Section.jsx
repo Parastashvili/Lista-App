@@ -26,7 +26,6 @@ export default function hello() {
 }
 const Section = styled.div`
   background-color: #f8f9fb;
-  height: 200px;
   border-top-right-radius: 200px;
   padding: 50px 0;
   h3 {

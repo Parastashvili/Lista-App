@@ -44,6 +44,7 @@ function App() {
       <Slider />
       <Banner />
       <Section />
+      <div>hello word</div>
     </>
   );
 }

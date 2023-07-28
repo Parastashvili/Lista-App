@@ -112,8 +112,11 @@ const FooterCont = styled.div`
   }
   .innerdiv {
     padding: 0 30px;
+    display: flex;
+    flex-direction: column;
     @media only screen and (max-width: 600px) {
       padding: 5px 20px;
+      align-items: center;
     }
     .outerCont {
       display: flex;

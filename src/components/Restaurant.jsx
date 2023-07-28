@@ -55,7 +55,7 @@ const Main = styled.div`
   box-shadow: 0px 10px 10px rgb(196, 196, 196);
   overflow: hidden;
   border-radius: 30px;
-  transition: ease 0.7s;
+  transition: ease 0.3s;
   &:hover {
     transform: translateY(-10px);
   }

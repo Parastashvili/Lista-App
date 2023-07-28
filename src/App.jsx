@@ -11,6 +11,7 @@ import Decoration1 from "./assets/Decorations/decoration1.png";
 import Decoration2 from "./assets/Decorations/decoration2.png";
 import Banner from "./components/Banner";
 import Section from "./components/Section";
+import Rating from "./components/Rating";
 function App() {
   return (
     <>
@@ -44,7 +45,7 @@ function App() {
       <Slider />
       <Banner />
       <Section />
-      <div>hello word</div>
+      <Rating />
     </>
   );
 }

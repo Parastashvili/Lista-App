@@ -66,7 +66,7 @@ const SlideInner = styled.div`
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    transition: ease 0.5s;
+    transition: ease 0.3s;
     &:hover {
       scale: 1.1;
     }

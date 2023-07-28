@@ -11,6 +11,8 @@ const Phrase = styled.div`
   line-height: 32px;
   padding: 0 20px;
   cursor: default;
+  max-width: 800px;
+  margin: auto;
   @media only screen and (max-width: 600px) {
     font-size: 12px;
     line-height: 18px;

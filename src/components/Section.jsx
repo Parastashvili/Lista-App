@@ -13,9 +13,6 @@ export default function hello() {
       </p>
       <div className="restaurant">
         <Restaurant />
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
       </div>
       <div className="buttonDiv">
         <Button

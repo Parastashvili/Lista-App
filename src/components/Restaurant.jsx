@@ -3,22 +3,49 @@ import { styled } from "styled-components";
 import cover1 from "../assets/MenuItems/cover1.png";
 import cover2 from "../assets/MenuItems/cover2.png";
 import cover3 from "../assets/MenuItems/cover3.png";
+import cover4 from "../assets/MenuItems/cover4.png";
 import Button from "./Button";
 export default function Restaurant() {
-  const covers = [cover1, cover2, cover3];
+  const data = [
+    {
+      img: cover1,
+      name: "Little Caesars Crazy Bread",
+      dsc: "But I must explain to you how all this mistaken idea of  will give you a complete account of the system",
+      price: "$6.30",
+    },
+    {
+      img: cover2,
+      name: "Two-Piece Fish Meal",
+      dsc: "Aq daiwereba restornis da kerdiz agwera",
+      price: "$21.30",
+    },
+    {
+      img: cover3,
+      name: "Dunkin' Munchkins",
+      dsc: "Aq daiwereba restornis da kerdiz agwera",
+      price: "$9.30",
+    },
+    {
+      img: cover4,
+      name: "Long Island Ice Tea",
+      dsc: "Aq daiwereba restornis da kerdiz agwera",
+      price: "$16.30",
+    },
+  ];
   return (
-    <Main>
-      <img src={cover1} alt="cover images" />
-      <h6>Little Caesars Crazy Bread</h6>
-      <p className="dsc">
-        But I must explain to you how all this mistaken idea of will give you a
-        complete account of the system
-      </p>
-      <div className="price">
-        <p>$6.30</p>
-        <Button text="Order Now" padding="5px 10px" textSize="14px"></Button>
-      </div>
-    </Main>
+    <>
+      {data.map((item, index) => (
+        <Main key={index}>
+          <img src={item.img} alt="cover images" />
+          <h6>{item.name}</h6>
+          <p className="dsc">{item.dsc}</p>
+          <div className="price">
+            <p>{item.price}</p>
+            <Button text="Order Now" padding="5px 10px" textSize="14px" />
+          </div>
+        </Main>
+      ))}
+    </>
   );
 }
 const Main = styled.div`
@@ -35,6 +62,7 @@ const Main = styled.div`
   cursor: default;
   img {
     width: 100%;
+    height: 160px;
   }
   h6 {
     color: #191d23;

@@ -61,7 +61,7 @@ const FooterCont = styled.div`
   .textContent {
     color: #75797f;
     font-family: Inter;
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 26px;
@@ -77,14 +77,30 @@ const FooterCont = styled.div`
   }
   .outer {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.2fr 0.7fr 1.1fr;
     border-bottom: 2px solid rgba(212, 212, 212, 0.5);
     padding-bottom: 40px;
+    align-items: start;
+    justify-content: start;
+    @media only screen and (max-width: 600px) {
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: auto;
+      text-align: center;
+      padding-bottom: 0px;
+    }
   }
   .divider {
     border-right: 2px solid rgba(212, 212, 212, 0.5);
+    border-bottom: none;
+    @media only screen and (max-width: 600px) {
+      border-bottom: 2px solid rgba(212, 212, 212, 0.5);
+      border-right: none;
+    }
   }
   .innerdiv {
-    padding: 10%;
+    padding: 0 30px;
+    @media only screen and (max-width: 600px) {
+      padding: 5px 20px;
+    }
   }
 `;

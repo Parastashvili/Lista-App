@@ -1,5 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
+import FooterImg from "./FooterImg";
+import fb from "../assets/Icons/facebook.png";
+import tw from "../assets/Icons/twitter.png";
+import loc from "../assets/Icons/location.png";
+import inst from "../assets/Icons/instagram.png";
+import phone from "../assets/Icons/phone.png";
+import email from "../assets/Icons/email.png";
 export default function Footer() {
   return (
     <FooterCont>
@@ -11,7 +18,11 @@ export default function Footer() {
             pleasure and praising pain was born and I will give you a complete
             account of the system idea of denouncing pleasure ...
           </p>
-          <div></div>
+          <ul className="icons">
+            <FooterImg img={fb} />
+            <FooterImg img={tw} />
+            <FooterImg img={inst} />
+          </ul>
         </div>
         <div className="divider innerdiv">
           <h5 className="header">Quick links</h5>
@@ -25,17 +36,19 @@ export default function Footer() {
         </div>
         <div className="innerdiv">
           <h4 className="header">Contact Us</h4>
-          <div>
-            <img src="" alt="" />
-            <p className="textContent">+995 557 60 23 53</p>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <p className="textContent">Levani.Parastashvili@gmail.com</p>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <p className="textContent">Georgia, Tbilisi</p>
+          <div className="outerCont">
+            <div className="contact">
+              <FooterImg img={phone} />
+              <p className="textContent">+995 557 60 23 53</p>
+            </div>
+            <div className="contact">
+              <FooterImg img={email} />
+              <p className="textContent">Levani.Parastashvili@gmail.com</p>
+            </div>
+            <div className="contact">
+              <FooterImg img={loc} />
+              <p className="textContent">Georgia, Tbilisi</p>
+            </div>
           </div>
         </div>
       </div>
@@ -77,7 +90,7 @@ const FooterCont = styled.div`
   }
   .outer {
     display: grid;
-    grid-template-columns: 1.2fr 0.7fr 1.1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     border-bottom: 2px solid rgba(212, 212, 212, 0.5);
     padding-bottom: 40px;
     align-items: start;
@@ -101,6 +114,27 @@ const FooterCont = styled.div`
     padding: 0 30px;
     @media only screen and (max-width: 600px) {
       padding: 5px 20px;
+    }
+    .outerCont {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 10px;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 40px;
+      margin-top: 10px;
+      @media only screen and (max-width: 600px) {
+        justify-content: center;
+      }
     }
   }
 `;

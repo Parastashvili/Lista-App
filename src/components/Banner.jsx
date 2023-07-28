@@ -4,16 +4,32 @@ import mask from "../assets/Banners/mask.png";
 import over from "../assets/Banners/over.png";
 import over1 from "../assets/Banners/over1.png";
 import over2 from "../assets/Banners/over2.png";
+import over3 from "../assets/Banners/over3.png";
 import Button from "./Button";
 import arrowright from "../assets/Icons/left.png";
 import arrowleft from "../assets/Icons/right.png";
 import deco from "../assets/Decorations/bannerdeco.png";
+import { useState, useEffect } from "react";
 export default function Banner() {
+  const images = [over, over1, over2, over3];
+  const [index, setIndex] = useState(0);
+  const [overImg, setOverImg] = useState(images[index]);
+  const changeOver = (e) => {
+    if (e == "+") {
+      setIndex((index + 1) % images.length);
+    } else {
+      setIndex((index - 1 + images.length) % images.length);
+    }
+  };
+  useEffect(() => {
+    setOverImg(images[index]);
+    console.log(index);
+  }, [index]);
   return (
     <Cont>
       <div className="banners">
-        <img className="mask" src={mask} alt="" />
-        <img className="over" src={over2} alt="" />
+        <img className="mask" src={mask} alt="mask image" />
+        <img className="over" src={overImg} alt="over image" />
       </div>
       <div className="textContent">
         <h2>
@@ -29,10 +45,18 @@ export default function Banner() {
         <Button text="Learn More" padding="5px 10px" textSize="14px"></Button>
         <div className="arrows">
           <button>
-            <img src={arrowleft} alt="arrow left" />
+            <img
+              onClick={() => changeOver("-")}
+              src={arrowleft}
+              alt="arrow left"
+            />
           </button>
           <button>
-            <img src={arrowright} alt="arrow rigth" />
+            <img
+              onClick={() => changeOver("+")}
+              src={arrowright}
+              alt="arrow rigth"
+            />
           </button>
         </div>
         <img className="decoration" src={deco} alt="" />

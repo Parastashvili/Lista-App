@@ -8,17 +8,14 @@ import dish1 from "../assets/HeroBanners/dish1.png";
 import dish2 from "../assets/HeroBanners/dish2.png";
 import dish3 from "../assets/HeroBanners/dish3.png";
 import { useState, useEffect } from "react";
-
 export default function HeroBanner() {
   const images = [HeroBg2, HeroBg3, HeroBg4, HeroBg5];
   const [heroBg, setHeroBg] = useState(HeroBg2);
   let currentIndex = 0;
-
   const changeBg = () => {
     setHeroBg(images[currentIndex]);
     currentIndex = (currentIndex + 1) % images.length;
   };
-
   useEffect(() => {
     const interval = setInterval(changeBg, 10000);
     return () => clearInterval(interval);

@@ -100,15 +100,23 @@ const HeroCentred = styled.div`
       font-style: normal;
       font-weight: 600;
       line-height: 44px;
+      @media only screen and (max-width: 1000px) {
+        font-size: 24px;
+        width: 70%;
+      }
     }
     p {
+      width: 85%;
       max-width: 450px;
       color: #75797f;
       font-family: Inter;
-      font-size: 13px;
+      font-size: 14px;
       font-style: normal;
       font-weight: 500;
       line-height: 20px;
+      @media only screen and (max-width: 800px) {
+        font-size: 12px;
+      }
     }
   }
 `;

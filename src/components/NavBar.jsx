@@ -94,7 +94,7 @@ const Logo = styled.img`
 const Navigation = styled.div`
   .hamburger {
     display: none;
-    @media only screen and (max-width: 786px) {
+    @media only screen and (max-width: 800px) {
       display: block;
     }
   }
@@ -103,7 +103,7 @@ const Navigation = styled.div`
     align-items: center;
     justify-content: right;
     gap: 30px;
-    @media only screen and (max-width: 786px) {
+    @media only screen and (max-width: 800px) {
       display: none;
     }
   }

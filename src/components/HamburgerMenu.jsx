@@ -9,7 +9,13 @@ export default function HamburgerMenu(props) {
           : { transform: "translateX(300px)" }
       }
     >
-      Menu
+      <ul>
+        <li>Home</li>
+        <li>Menu</li>
+        <li>Locations</li>
+        <li>Review</li>
+        <li>About Us</li>
+      </ul>
     </Main>
   );
 }
@@ -25,5 +31,22 @@ const Main = styled.div`
   transition: ease-out 0.3s;
   @media only screen and (min-width: 786px) {
     display: none;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    li {
+      cursor: pointer;
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      transition: ease 0.3s;
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
   }
 `;

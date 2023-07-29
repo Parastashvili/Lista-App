@@ -51,7 +51,6 @@ function App() {
     </>
   );
 }
-
 export default App;
 const HeroCentred = styled.div`
   width: 100%;

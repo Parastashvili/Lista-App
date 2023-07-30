@@ -82,6 +82,9 @@ const HeroCentred = styled.div`
       display: none;
     }
   }
+
+
+  
   .text {
     display: flex;
     align-items: center;
